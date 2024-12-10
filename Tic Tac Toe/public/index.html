@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+
+<body class="bg-[#EDEBD7]">
+    <article class="">
+
+        <section id="headingSection" class="text-center">
+            <h1 class="text-[#423E37] uppercase text-3xl md:text-5xl lg:text-7xl font-extrabold pt-3">tic tac toe</h1>
+        </section>
+
+        <section id="newGameSection" class="text-[#423E37] h-[90vh] text-center pt-28 md:pt-44 lg:pt-56">
+            <h2 class="capitalize text-3xl font-semibold"></h2>
+            <h3 class="capitalize text-2xl font-semibold"> click below to start a new game</h3>
+            <input type="button" value="New Game" name="" id="btnNewGame" onclick="btnOperation(this)"
+                class="btnAction text-[#423E37] border-2 border-[#423E37] mt-2 px-6 py-1 rounded-md">
+        </section>
+
+        <section id="gameSection" class="h-[90vh] text-center hidden">
+            <div id="playerTurnAnimation" class="mt-2 py-2 capitalize md:text-xl">
+                player 'X' turn
+            </div>
+            <div id="boxes" class="text-center py-2 max-w-80 md:max-w-[600px] mx-auto">
+                <input type="button" name="" id="box1" value="" onclick="boxClick(this)"
+                    class="w-20 md:w-40 h-20 md:h-40 border-2 border-[#423E37] rounded-2xl col-span-3 bg-[#6E675F] text-white font-bold text-3xl md:text-8xl m-2">
+                <input type="button" name="" id="box2" value="" onclick="boxClick(this)"
+                    class="w-20 md:w-40 h-20 md:h-40 border-2 border-[#423E37] rounded-2xl col-span-3 bg-[#6E675F] text-white font-bold text-3xl md:text-8xl m-2">
+                <input type="button" name="" id="box3" value="" onclick="boxClick(this)"
+                    class="w-20 md:w-40 h-20 md:h-40 border-2 border-[#423E37] rounded-2xl col-span-3 bg-[#6E675F] text-white font-bold text-3xl md:text-8xl m-2">
+                <input type="button" name="" id="box4" value="" onclick="boxClick(this)"
+                    class="w-20 md:w-40 h-20 md:h-40 border-2 border-[#423E37] rounded-2xl col-span-3 bg-[#6E675F] text-white font-bold text-3xl md:text-8xl m-2">
+                <input type="button" name="" id="box5" value="" onclick="boxClick(this)"
+                    class="w-20 md:w-40 h-20 md:h-40 border-2 border-[#423E37] rounded-2xl col-span-4 bg-[#6E675F] text-white font-bold text-3xl md:text-8xl m-2">
+                <input type="button" name="" id="box6" value="" onclick="boxClick(this)"
+                    class="w-20 md:w-40 h-20 md:h-40 border-2 border-[#423E37] rounded-2xl col-span-4 bg-[#6E675F] text-white font-bold text-3xl md:text-8xl m-2">
+                <input type="button" name="" id="box7" value="" onclick="boxClick(this)"
+                    class="w-20 md:w-40 h-20 md:h-40 border-2 border-[#423E37] rounded-2xl col-span-4 bg-[#6E675F] text-white font-bold text-3xl md:text-8xl m-2">
+                <input type="button" name="" id="box8" value="" onclick="boxClick(this)"
+                    class="w-20 md:w-40 h-20 md:h-40 border-2 border-[#423E37] rounded-2xl col-span-4 bg-[#6E675F] text-white font-bold text-3xl md:text-8xl m-2">
+                <input type="button" name="" id="box9" value="" onclick="boxClick(this)"
+                    class="w-20 md:w-40 h-20 md:h-40 border-2 border-[#423E37] rounded-2xl col-span-4 bg-[#6E675F] text-white font-bold text-3xl md:text-8xl m-2">
+            </div>
+            <div>
+                <input type="button" value="RESET" name="" id="btnReset" onclick="btnOperation(this)"
+                    class="btnAction text-[#423E37] border-2 border-[#423E37] px-6 py-1 rounded-md">
+            </div>
+        </section>
+
+    </article>
+    <script src="index.js"></script>
+</body>
+
+</html>
