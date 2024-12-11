@@ -2,22 +2,73 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <article class="container h-full bg[url(Assets/BackgroundMain.jpg)] p-4 text-center">
-        <section>
-            <div>
-                <span class="uppercase">
-                    password generator
-                </span>
+    <article class="bg-[url(Assets/BackgroundMain.jpg)] bg-center h-[100vh] text-center relative">
+        <section class="bg-[rgba(0,0,0,0.8)] w-full h-full absolute flex justify-center items-center">
+            <div class="w-[300px] sm:w-[500px] px-4 py-6 bg-[rgba(0,0,0,0.5)] rounded-md">
+
+                <!-- Title -->
+                <div>
+                    <span class="uppercase font-bold text-xl sm:text-3xl text-white">
+                        password generator
+                    </span>
+                </div>
+
+                <!-- Input Text and Copy Button -->
+                <div class="max-w-[300px] sm:max-w-[400px] mx-auto">
+                    <div class="py-8 relative flex justify-center items-center">
+                        <input type="text" class="w-full py-2 sm:py-2 pl-2 sm:pl-3 pr-10 rounded-md font-normal sm:font-bold text-black
+                            tracking-tighter sm:tracking-[2px] placeholder:font-normal placeholder:tracking-normal placeholder:text-[#000000] border-[rgba(8,145,178,1)] border-2 bg-slate-300"
+                            placeholder="Click 'Generate Password'" />
+                        <i
+                            class="fa-regular fa-copy text-[#1d5767] text-xl sm:text-3xl absolute right-2 sm:right-3 cursor-pointer"></i>
+                    </div>
+                </div>
+
+                <!-- Setting -->
+                <div class="max-w-[300px] sm:max-w-[400px] mx-auto capitalize grid gap-3">
+                    <div class="flex justify-between items-center">
+                        <Span class="text-white">password length</Span>
+                        <input type="number" min="8" max="20" value="12" class="px-1 text-center rounded-md border-[rgba(8,145,178,1)] border-2">
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <Span class="text-white">uppercase letters</Span>
+                        <input type="checkbox" class="" value="Upper">
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <Span class="text-white">lowercase letters</Span>
+                        <input type="checkbox" class="" value="Lower">
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <Span class="text-white">numbers</Span>
+                        <input type="checkbox" class="" value="Nums">
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <Span class="text-white">special characters</Span>
+                        <input type="checkbox" class="" value="spChars">
+                    </div>
+                </div>
+
+                <!-- Generate Password Button -->
+                 <div class="max-w-[300px] sm:max-w-[400px] mx-auto mt-8 mb-3">
+                    <input type="button" value="Generate Password" class="text-white border-[rgba(8,145,178,1)] border-2 w-full py-2 hover:bg-[rgba(8,145,178,1)] hover:border-[#1d5767]">
+                 </div>
             </div>
         </section>
     </article>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
