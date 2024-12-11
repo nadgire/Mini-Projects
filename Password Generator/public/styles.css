@@ -730,6 +730,10 @@ video {
   letter-spacing: -0.05em;
 }
 
+.tracking-\[2px\] {
+  letter-spacing: 2px;
+}
+
 .text-\[\#1d5767\] {
   --tw-text-opacity: 1;
   color: rgb(29 87 103 / var(--tw-text-opacity, 1));
