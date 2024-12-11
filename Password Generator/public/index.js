@@ -17,7 +17,13 @@ var allCharSet = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz', '0
 // sp char length 23
 
 btnCopy.addEventListener("click", function () {
-    console.log("hello");
+    if(txtPassword.value==""){
+        alert("Please generate password!");
+    }
+    else{
+        navigator.clipboard.writeText(txtPassword.value);
+        alert("Copied!");
+    }
 })
 
 
