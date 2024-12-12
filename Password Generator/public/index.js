@@ -5,10 +5,10 @@ var btnGenerate = document.querySelector("input[type=button]");
 var txtLength = document.querySelector("input[type=number");
 var checkSetting = document.querySelectorAll("input[type=checkbox]");
 
-var upperCharSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var lowerCharSet = 'abcdefghijklmnopqrstuvwxyz';
-var numberCharSet = '0123456789';
-var spCharSet = '!@#$%^&*()-_=+[{]}<>./?';
+// var upperCharSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// var lowerCharSet = 'abcdefghijklmnopqrstuvwxyz';
+// var numberCharSet = '0123456789';
+// var spCharSet = '!@#$%^&*()-_=+[{]}<>./?';
 
 var password = "";
 
@@ -43,11 +43,11 @@ btnGenerate.addEventListener("click", function () {
     }
     else {
         for (let i = 0; i < passLength; i++) {
-            const randomCharSet = Math.floor(Math.random() * charSet.length);
-            const str = charSet[randomCharSet];
+            // const randomCharSet = Math.floor(Math.random() * charSet.length);
+            const str = charSet[Math.floor(Math.random() * charSet.length)];
             // console.log(str);
-            const strIndex = Math.floor(Math.random() * str.length);
-            password += str[strIndex];
+            // const strIndex = Math.floor(Math.random() * str.length);
+            password += str[Math.floor(Math.random() * str.length)];
         }
     }
 
