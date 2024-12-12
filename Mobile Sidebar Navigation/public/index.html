@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    
-    <header class="bg-white shadow-md flex justify-between items-center px-3 sm:px-10">
+
+    <header class="bg-white shadow-md flex justify-between items-center px-3 sm:px-10 relative">
         <div class="">
             <img src="Assets/logo.png" alt="" class="w-28 h-24 sm:scale-125 md:scale-150">
         </div>
-        <div class="hidden md:block">
+        <div id="navbarDesktop" class="hidden md:block">
             <nav class="">
                 <ul class="flex gap-6 lg:gap-12">
                     <li>
@@ -34,16 +36,45 @@
         <div class="">
             <div class="inline-block">
                 <div class="relative flex items-center">
-                    <input type="text" class="border-2 border-black w-8 sm:w-full rounded-md">
-                    <i class="fa-solid fa-magnifying-glass absolute right-2 md:right-3"></i>
+                    <input type="text" id="txtSearchBox" class="border-2 border-black w-8 sm:w-full rounded-md pl-[6px] pr-6">
+                    <i id="searchIcon" class="fa-solid fa-magnifying-glass absolute right-2 md:right-3 cursor-pointer"></i>
                 </div>
             </div>
             <div class="inline-block ml-2">
-                <i class="fa-solid fa-bars text-xl mr-2 md:hidden"></i> 
+                <i id="showNavBar" class="fa-solid fa-bars text-xl mr-2 md:hidden cursor-pointer toggle"></i>
+            </div>
+
+            <div id="mobileNavbar" class="hidden absolute bg-gray-700 w-full sm:w-[400px] h-[100vh] right-[0] top-0 md:hidden">
+
+                <div class="">
+                    <div class="py-8 flex items-center">
+                        <span class="text-white text-[22px] px-5">Welcome to Pizza Cafe</span>
+                        <i id="hideNavBar" class="fa-regular fa-circle-xmark float-end absolute right-5 text-xl text-white toggle"></i>
+                    </div>
+                </div>
+                <hr>
+                <div id="navbarMobile" class="px-10 py-10 text-white">
+                    <ul class="flex flex-col gap-6">
+                        <li>
+                            Home
+                        </li>
+                        <li>
+                            Menus
+                        </li>
+                        <li>
+                            About Us
+                        </li>
+                        <li>
+                            Contact Us
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </header>
 
     <script src="index.js"></script>
 </body>
+
 </html>
