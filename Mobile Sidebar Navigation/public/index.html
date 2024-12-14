@@ -16,30 +16,46 @@
 </head>
 
 <body class="" style="font-family: 'Averia Serif Libre', sans;">
-    <header class="h-20 shadow-xl">
-        <nav class="flex justify-between items-center relative">
-            <div class="">
-                <img src="Assets/logo.png" alt="" class="min-w-36 w-36 min-h-20 h-20">
+    <header class="shadow-xl h-[72px]">
+
+        <nav class="flex justify-between items-center relative px-5 md:pl-5 md:pr-10">
+            <div class="w-28 h-16">
+                <img src="Assets/logo.png" alt="" class="w-36 h-20">
             </div>
-            <ul id="menus"
-                class="z-10 flex flex-col md:flex-row absolute md:relative right-0 top-0 pt-20 md:pt-0 gap-5 md:gap-4 lg:gap-6 text-lg font-thin
-                 bg-red-400 w-[320px] md:w-auto text-center h-svh md:h-fit">
-                <li>Home</li>
-                <li>Menu</li>
-                <li class="whitespace-nowrap">About Us</li>
-                <li>FAQs</li>
-                <li class="whitespace-nowrap">Contact Us</li>
+
+            <ul id="menus" class="flex flex-col md:flex-row gap-8 md:mx-2 md:gap-8 lg:gap-10 xl:gap-14 absolute md:relative right-0 top-0 bg-[rgba(0,0,0,0.8)] md:bg-transparent 
+                       w-80 md:w-auto h-[100vh] md:h-auto px-20 pt-28 md:px-0 md:pt-0 text-white md:text-black z-10 whitespace-nowrap
+
+                       -translate-y-full md:-translate-y-0 duration-1000">
+                <li>
+                    Home
+                </li>
+                <li>
+                    Menus
+                </li>
+                <li>
+                    About Us
+                </li>
+                <li>
+                    Franchise
+                </li>
+                <li>
+                    Contact Us
+                </li>
+
             </ul>
-            <div class="flex items-center gap-4">
-                <div class="flex items-center relative">
-                    <input id="searchBox" type="text" class="border-gray-300 border-[2px] rounded-xl py-1 pl-2 pr-8 w-full">
-                    <i class="fa-solid fa-magnifying-glass text-gray-500 absolute right-3"></i>
+
+            <div class="flex items-center gap-3">
+                <div class="relative flex items-center">
+                    <input id="txtSearch" type="text" placeholder="Search.." class="border-[1px] border-black pl-2 pr-9 w-10 duration-1000 sm:w-auto md:w-10 lg:w-auto">
+                    <i id="iconSearch" class="fa-solid fa-magnifying-glass absolute right-4 transition-all"></i>
                 </div>
-                <div class="md:hidden z-20 mr-7">
-                    <i class="fa-solid fa-bars fa-xl" id="hamburgerMenu"></i>
+                <div class="md:hidden z-20">
+                    <i id="hamburgerMenu" class="fa-solid fa-bars fa-lg transition-all"></i>
                 </div>
             </div>
         </nav>
+
     </header>
 
     <script src="index.js"></script>
