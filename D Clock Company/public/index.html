@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock | Alarm | Timer </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        @font-face {
+            font-family: 'Digital';
+            src: url(Fonts/digital.ttf);
+        }
+
+    </style>
+</head>
+<body class="">
+    <header class="py-6 md:py-10 relative">
+        <input type="button" value="Dark Mode" class="absolute right-5 top-3 md:right-10 md:top-6 bg-black text-white px-1 text-[12px] md:text-[16px] md:px-3 md:py-1 rounded-sm">
+        <h1 class="text-center font-extrabold text-2xl md:text-5xl drop-shadow-2xl mt-2 md:mt-0">'D' Clock Company</h1>
+    </header>
+    
+    <main class="grid md:flex justify-around text-center">
+       
+        <section class="order-2 md:order-1">
+            Alarm
+        </section>
+
+        <section class="mt-4 md:mt-10 order-1 md:order-2">
+            <div class="relative w-56 h-56 md:w-96 md:h-96 border-2 border-black rounded-full">
+
+                <div class="absolute top-0 left-1/2 text-base md:text-4xl -translate-x-1/2">XII</div>
+                <div class="absolute bottom-0 right-1/2 text-base md:text-4xl translate-x-1/2">VI</div>
+                <div class="absolute top-1/2 left-0 text-base md:text-4xl -translate-y-1/2">IX</div>
+                <div class="absolute bottom-1/2 right-0 text-base md:text-4xl translate-y-1/2">III</div>
+
+                <div id="centerPoint" class="absolute w-2 h-2 bg-red-700 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                <div id="hourHand" class="absolute h-[44px] md:h-[88px] w-1 bg-black rounded-xl bottom-1/2 left-1/2 -translate-x-1/2 "></div>
+                <div id="minuteHand" class="absolute h-20 md:h-36 w-1 bg-black rounded-xl top-1/2 left-1/2 -translate-x-1/2"></div>
+                <div id="secondHand" class="absolute h-20 md:h-36 w-1 border-[1px] border-red-700 rounded-xl bottom-1/2 left-1/2 -translate-x-1/2">
+                    <div id="secondFill" class=""></div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="order-3">
+            timer
+        </section>
+
+    </main>
+
+    <footer class="font-[Digital] text-center my-10 tracking-widest">
+        <div class="flex w-full justify-center gap-2">
+            <div id="digitalHH" class="text-4xl md:text-6xl font-extrabold">
+            </div>
+            <div class="text-4xl md:text-6xl font-extrabold">
+                :
+            </div>
+            <div id="digitalMM" class="text-4xl md:text-6xl font-extrabold ">
+            </div>
+            <div id="digitalSeconds" class="text-2xl md:text-4xl text-red-700 font-bold flex items-end">
+            </div>
+            <div id="digitalAMPM" class="text-xl flex items-end">
+            </div>
+        </div>
+        <div class="flex justify-center text-md md:text-2xl gap-2">
+            <div id="digitalDay">
+            </div>
+            <div id="digitalMon">
+            </div>
+            <div id="digitalDate" class="bg-red-700 text-white w-6 md:w-8 rounded-full">
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
