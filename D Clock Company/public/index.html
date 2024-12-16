@@ -16,49 +16,51 @@
     </style>
 </head>
 
-<body class="">
+<body class="text-shadow-2xl">
     <header class="pt-10 relative text-center">
         <input type="button" value="Dark Mode"
-            class="absolute right-5 top-3 md:right-10 md:top-6 bg-black text-white py-1 px-1 text-[12px] md:text-[16px] md:px-3 md:py-1 rounded-md hover:bg-transparent border-2 border-black hover:text-black cursor-pointer">
+            class="absolute right-5 top-3 md:right-10 md:top-6 bg-black text-white py-1 px-1 text-[12px] md:text-[16px] md:px-3 md:py-1 rounded-md  border-2 border-black hover:text-black hover:bg-transparent cursor-pointer">
         <h1 class="font-extrabold text-2xl md:text-5xl mt-2 md:mt-0 inline">'D' Clock Company</h1>
     </header>
 
-    <main class="grid md:grid md:grid-cols-3 justify-around text-center">
+    <main id="mainDiv" class="grid md:grid md:grid-cols-3 justify-around text-center pt-6 md:pt-10 md:pb-6">
 
-        <section id="alarm" class="border-2 border-black rounded-md md:border-0 p-2 mt-10 order-2 md:order-1 flex flex-col gap-2">
-            ALARM
-            <div>
-                <input type="number" min="1" max="12" value="1"
-                    class="border-[1px] border-black text-center pl-2 rounded-md">
-                <input type="number" min="0" max="59" value="0"
-                    class="border-[1px] border-black text-center pl-2 rounded-md">
-                <div class="inline text-gray-400">
-                    <input type="button" value="AM" class="px-1 hover:text-black cursor-pointer">
-                    <span>/</span>
-                    <input type="button" value="PM" class="px-1 hover:text-black cursor-pointer">
+        <section class="my-auto order-2 md:order-1 md:text-xl lg:text-2xl">
+            <div id="alarmDiv" class="border-2 border-black rounded-md md:border-0 p-2 mt-8 md:mt-0 flex flex-col gap-2 shadow-md md:shadow-none shadow-black">
+                <span class="font-bold">Alarm</span>
+                <div>
+                    <input type="number" min="1" max="12" placeholder="HH"
+                        class="border-[1px] text-center pl-2 rounded-md">
+                    <input type="number" min="0" max="59" placeholder="MM"
+                        class="border-[1px] text-center pl-2 rounded-md">
+                    <div class="inline-block text-gray-500">
+                        <input type="button" value="AM" class="px-1 cursor-pointer">
+                        <span>/</span>
+                        <input type="button" value="PM" class="px-1 cursor-pointer">
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div class="flex justify-center items-center gap-2">
-                    <input type="button" value="Cancel"
-                        class="bg-gray-600 text-white px-3 rounded-sm hover:bg-gray-800 cursor-pointer">
-                    <input type="button" value="Save"
-                        class="bg-gray-600 text-white px-5 rounded-sm hover:bg-gray-800 cursor-pointer">
+                <div>
+                    <div id="alarm" class="flex justify-center items-center gap-2">
+                        <input type="button" value="Cancel"
+                            class="bg-gray-500 text-white px-3 md:px-3 md:py-1 lg:px-5 lg:py-1 rounded-md hover:bg-red-700 cursor-pointer">
+                        <input type="button" value="Save"
+                            class="bg-gray-500 text-white px-5 md:px-5 md:py-1 lg:px-8 lg:py-1 rounded-md hover:bg-red-700 cursor-pointer">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="clock" class="mt-4 md:mt-10 right-0 order-1 md:order-2">
-            <div class="relative w-56 h-56 md:w-72 md:h-72 lg:w-96 lg:h-96 border-2 border-black rounded-full mx-auto">
+        <section id="clock" class="order-1 md:order-2 my-auto">
+            <div class="relative w-56 h-56 md:w-72 md:h-72 lg:w-96 lg:h-96 border-2 border-black rounded-full mx-auto shadow-xl shadow-gray-500">
 
-                <div id="XII" class="absolute text-base md:text-xl lg:text-2xl top-0 left-1/2 -translate-x-1/2">12</div>
-                <div id="III" class="absolute text-base md:text-xl lg:text-2xl top-1/2 right-0 -translate-y-1/2 mr-2">3
+                <div id="XII" class="absolute font-bold text-2xl md:text-3xl lg:text-4xl top-0 left-1/2 -translate-x-1/2">12</div>
+                <div id="III" class="absolute font-bold text-base md:text-xl lg:text-2xl top-1/2 right-0 -translate-y-1/2 mr-2">3
                 </div>
-                <div id="VI" class="absolute text-base md:text-xl lg:text-2xl bottom-0 left-1/2 -translate-x-1/2">6
+                <div id="VI" class="absolute font-bold text-base md:text-xl lg:text-2xl bottom-0 left-1/2 -translate-x-1/2">6
                 </div>
-                <div id="IX" class="absolute text-base md:text-xl lg:text-2xl top-1/2 -translate-y-1/2 ml-2">9</div>
+                <div id="IX" class="absolute font-bold text-base md:text-xl lg:text-2xl top-1/2 -translate-y-1/2 ml-2">9</div>
 
-                <div id="centerPoint"
+                <div
                     class="absolute w-3 h-3 bg-black border-4 border-red-700 rounded-full left-1/2  bottom-1/2 translate-y-1/2 -translate-x-1/2 z-50">
                 </div>
 
@@ -76,50 +78,56 @@
             </div>
         </section>
 
-        <section id="timer" class="border-2 border-black rounded-md md:border-0 p-2 mt-10 order-3 flex flex-col gap-2">
-            TIMER
-            <div>
-                <input type="number" min="1" max="12" value="1"
-                    class="border-[1px] border-black text-center pl-2 rounded-md">
-                <input type="number" min="0" max="59" value="0"
-                    class="border-[1px] border-black text-center pl-2 rounded-md">
-                <input type="number" min="0" max="59" value="0"
-                    class="border-[1px] border-black text-center pl-2 rounded-md">
-            </div>
-            <div>
-                <div class="flex justify-center items-center gap-2">
-                    <input type="button" value="Cancel"
-                        class="bg-gray-600 text-white px-3 rounded-sm hover:bg-gray-800 cursor-pointer">
-                    <input type="button" value="Start"
-                        class="bg-gray-600 text-white px-5 rounded-sm hover:bg-gray-800 cursor-pointer">
+        <section class="my-auto order-3 md:text-xl lg:text-2xl">
+            <div id="timerDiv" class="border-2 border-black rounded-md md:border-0 p-2 mt-6 md:mt-0 flex flex-col gap-2 shadow-md md:shadow-none shadow-black">
+                <span class="font-bold">Timer</span>
+                <div class="md:grid gap-2 lg:block md:w-2/3 lg:w-full mx-auto">
+                    <input type="number" min="0" max="99" placeholder="HH"
+                        class="border-[1px] text-center pl-2 rounded-md">
+                    <input type="number" min="0" max="59" placeholder="MM"
+                        class="border-[1px] text-center pl-2 rounded-md">
+                    <input type="number" min="5" max="59" placeholder="SS"
+                        class="border-[1px] text-center pl-2 rounded-md">
+                </div>
+                <div>
+                    <div id="timer" class="flex justify-center items-center gap-2">
+                        <input type="button" value="Cancel"
+                            class="bg-gray-500 text-white px-3 md:px-3 md:py-1 lg:px-5 lg:py-1 rounded-md hover:bg-red-700 cursor-pointer">
+                        <input type="button" value="Start"
+                            class="bg-gray-500 text-white px-5 md:px-5 md:py-1 lg:px-8 lg:py-1 rounded-md hover:bg-red-700 cursor-pointer">
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
-    <footer class="font-[Digital] text-center my-10 tracking-widest">
-        <div class="flex w-full justify-center gap-2">
-            <div id="digitalHH" class="text-4xl md:text-6xl font-extrabold">
+
+    <footer id="digitalClock">
+        <div class="font-[Digital] text-center tracking-widest append mx-auto py-3 mt-3 md:mt-0">
+            <div class="flex w-full justify-center gap-2">
+                <div id="digitalHH" class="text-6xl md:text-8xl font-extrabold min-w-[60px] md:min-w-[94px]">
+                </div>
+                <div class="text-6xl md:text-8xl font-extrabold">
+                    :
+                </div>
+                <div id="digitalMM" class="text-6xl md:text-8xl font-extrabold min-w-[60px] md:min-w-[94px]">
+                </div>
+                <div id="digitalSeconds" class="text-4xl md:text-6xl text-red-700 font-bold flex items-end min-w-[37.3px] md:min-w-[60px]">
+                </div>
+                <div id="digitalAMPM" class="text-2xl md:text-4xl flex items-end">
+                </div>
             </div>
-            <div class="text-4xl md:text-6xl font-extrabold">
-                :
-            </div>
-            <div id="digitalMM" class="text-4xl md:text-6xl font-extrabold ">
-            </div>
-            <div id="digitalSeconds" class="text-2xl md:text-4xl text-red-700 font-bold flex items-end">
-            </div>
-            <div id="digitalAMPM" class="text-xl flex items-end">
-            </div>
-        </div>
-        <div class="flex justify-center text-md md:text-2xl gap-2">
-            <div id="digitalDay">
-            </div>
-            <div id="digitalMon">
-            </div>
-            <div id="digitalDate" class="bg-red-700 text-white w-6 md:w-8 rounded-full">
+            <div class="flex justify-center text-2xl md:text-4xl gap-2 mt-2 md:mt-4">
+                <div id="digitalDay" class="text-shadow-lg">
+                </div>
+                <div id="digitalMon">
+                </div>
+                <div id="digitalDate" class="bg-red-700 text-white w-8 md:w-11 rounded-full">
+                </div>
             </div>
         </div>
     </footer>
+
     <script src="index.js"></script>
 </body>
 
