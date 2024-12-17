@@ -25,7 +25,7 @@
 
     <main id="mainDiv" class="grid md:grid md:grid-cols-3 justify-around text-center pt-6 md:pt-10 md:pb-6">
 
-        <section class="my-auto order-2 md:order-1 md:text-xl lg:text-2xl">
+        <section id="alarmSection" class="my-auto order-3 md:order-1 md:text-xl lg:text-2xl">
             <div id="alarmDiv" class="border-2 border-black rounded-md md:border-0 p-2 mt-8 md:mt-0 flex flex-col gap-2 shadow-md md:shadow-none shadow-black">
                 <span class="font-bold">Alarm</span>
                 <div>
@@ -50,7 +50,7 @@
             </div>
         </section>
 
-        <section id="clock" class="order-1 md:order-2 my-auto">
+        <section id="clockSection" class="order-1 md:order-2 my-auto">
             <div class="relative w-56 h-56 md:w-72 md:h-72 lg:w-96 lg:h-96 border-2 border-black rounded-full mx-auto shadow-xl shadow-gray-500">
 
                 <div id="XII" class="absolute font-bold text-2xl md:text-3xl lg:text-4xl top-0 left-1/2 -translate-x-1/2">12</div>
@@ -78,7 +78,7 @@
             </div>
         </section>
 
-        <section class="my-auto order-3 md:text-xl lg:text-2xl">
+        <section id="timerSection" class="my-auto order-4 md:text-xl lg:text-2xl">
             <div id="timerDiv" class="border-2 border-black rounded-md md:border-0 p-2 mt-6 md:mt-0 flex flex-col gap-2 shadow-md md:shadow-none shadow-black">
                 <span class="font-bold">Timer</span>
                 <div class="md:grid gap-2 lg:block md:w-2/3 lg:w-full mx-auto">
@@ -102,7 +102,7 @@
 
     </main>
 
-    <footer id="digitalClock">
+    <footer id="digitalClock" class="order-2">
         <div class="font-[Digital] text-center tracking-widest append mx-auto py-3 mt-3 md:mt-0">
             <div class="flex w-full justify-center gap-2">
                 <div id="digitalHH" class="text-6xl md:text-8xl font-extrabold min-w-[60px] md:min-w-[94px]">

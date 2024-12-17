@@ -622,6 +622,10 @@ video {
   order: 3;
 }
 
+.order-4 {
+  order: 4;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1077,6 +1081,10 @@ video {
 
   .md\:order-2 {
     order: 2;
+  }
+
+  .md\:order-3 {
+    order: 3;
   }
 
   .md\:mt-0 {

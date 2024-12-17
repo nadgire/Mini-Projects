@@ -17,7 +17,7 @@ const alarmDiv = document.getElementById("alarmDiv");
 const timerDiv = document.getElementById("timerDiv")
 const txtBoxes = document.querySelectorAll("input[type=number]");
 const digitalClock = document.getElementById("digitalClock");
-const clock = document.querySelector("clock");
+const clockSection = document.querySelector("clockSection");
 
 
 const arrDay = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
@@ -340,7 +340,7 @@ function handleResize() {
     const mainDiv = document.getElementById("mainDiv");
     width = window.innerWidth;
     if (width < 768) {
-        document.body.insertBefore(digitalClock, mainDiv);
+        mainDiv.appendChild(digitalClock);
     }
     if (width >= 768) {
         document.body.appendChild(digitalClock);
