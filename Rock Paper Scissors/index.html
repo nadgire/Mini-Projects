@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header>
+        Rock Paper Scissors
+    </header>
+
+    <main>
+        <input type="button" value="Reset">
+
+        <div id="youDiv" class="playerDiv">
+            <div id="youScore" class="score hidden">
+                YOU
+            </div>
+            <div id="youImage" class="bigImageDiv">
+                <img src="" alt="" class="bigImage hidden">
+            </div>
+        </div>
+
+        <div id="start">
+            Pick your choice to start the game!
+        </div>
+
+        <div id="compDiv" class="playerDiv">
+            <div id="compImage" class="bigImageDiv">
+                <img src="" alt="" class="bigImage hidden">
+            </div>
+            <div id="compScore" class="score hidden">
+                BOT
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="footerSection">
+        <div id="divImages">
+            <img src="rock.png" alt="" class="footerImages">
+            <img src="paper.png" alt="" class="footerImages">
+            <img src="scissors.png" alt="" class="footerImages">
+        </div>
+    </footer>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
