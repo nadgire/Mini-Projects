@@ -254,18 +254,16 @@ function cancelAlarm() {
     clearInterval(alarmInterval);
     txtBoxes[0].value = "";
     txtBoxes[1].value = "";
-    txtBoxes[0].style.backgroundColor = "transparent";
-    txtBoxes[1].style.backgroundColor = "transparent";
+    txtBoxes[0].style.backgroundColor = "white";
+    txtBoxes[1].style.backgroundColor = "white";
     txtBoxes[0].disabled = false;
     txtBoxes[1].disabled = false;
     btns[1].disabled = false;
     btns[2].disabled = false;
     btns[1].style.fontWeight = "normal";
     btns[1].style.color = "gray";
-    btns[1].style.fontSize = "24px";
     btns[2].style.fontWeight = "normal";
     btns[2].style.color = "gray";
-    btns[2].style.fontSize = "24px";
 }
 
 function cancelTimer() {
@@ -273,9 +271,9 @@ function cancelTimer() {
     txtBoxes[2].value = "";
     txtBoxes[3].value = "";
     txtBoxes[4].value = "";
-    txtBoxes[2].style.backgroundColor = "transparent";
-    txtBoxes[3].style.backgroundColor = "transparent";
-    txtBoxes[4].style.backgroundColor = "transparent";
+    txtBoxes[2].style.backgroundColor = "white";
+    txtBoxes[3].style.backgroundColor = "white";
+    txtBoxes[4].style.backgroundColor = "white";
     txtBoxes[2].disabled = false;
     txtBoxes[3].disabled = false;
     txtBoxes[4].disabled = false;
