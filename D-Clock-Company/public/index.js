@@ -18,7 +18,7 @@ const timerDiv = document.getElementById("timerDiv")
 const txtBoxes = document.querySelectorAll("input[type=number]");
 const digitalClock = document.getElementById("digitalClock");
 const clockSection = document.querySelector("clockSection");
-
+const audio = new Audio("Audio/Alarm.mp3")
 
 const arrDay = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 const arrMonth = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec'];
