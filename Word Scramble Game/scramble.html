@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section class="bg-[#5519b0] w-full h-screen relative">
+        <div id="anim" class="hidden text-center absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 space-y-4">
+            <button class="bg-yellow-400 border-white border-[4px] w-24 h-24 rounded-full transition-all">
+                <i class="fa-solid fa-play fa-2xl text-[#5519b0]"></i>
+            </button>
+            <div id="loadDiv" class="text-center hidden">
+                <div class="w-56 h-3 bg-white border-white border-2 rounded-full ">
+                    <div id="loadingAnim" class="h-2 w-0 bg-yellow-400 rounded-full">
+
+                    </div>
+                </div>
+                <div id="loadingPercentage" class="text-white">
+                </div>
+            </div>
+        </div>
+
+        <div id="game" class="border-2 border-black h-screen w-[300px] text-center mx-auto">
+
+            <div id="header">
+
+            </div>
+
+            <div id="scrambledWord">
+
+            </div>
+
+            <div id="hint">
+
+            </div>
+
+            <div id="userInput" class="space-y-4">
+                <input type="text"
+                    class="border-b-white border-2 w-full h-10 px-5 tracking-[0.5em] text-white font-bold text-xl bg-transparent text-center uppercase ">
+                <input type="button" value="Submit"
+                    class="bg-yellow-400 w-1/2 border-2 border-white py-1 font-semibold rounded-md">
+            </div>
+
+            <div id="footer" class="fixed bottom-10 left-1/2 -translate-x-1/2">
+                <input type="button" value="End Game"
+                    class="border-white border-2 bg-yellow-400 px-5 py-1 font-semibold rounded-md">
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="scramble.js"></script>
+</body>
+
+</html>
