@@ -8,3 +8,4 @@
 | 04  | [Password Generator](https://github.com/nadgire/Mini-Projects/tree/main/Password%20Generator)                          | [Live Demo](https://nadgire.github.io/Mini-Projects/Password%20Generator/public)          |
 | 05  | [Rock Paper Scissors](https://github.com/nadgire/Mini-Projects/tree/main/Rock%20Paper%20Scissors)                               | [Live Demo](https://nadgire.github.io/Mini-Projects/Rock%20Paper%20Scissors)                |
 | 06  | [Tic Tac Toe](https://github.com/nadgire/Mini-Projects/tree/main/Tic%20Tac%20Toe)                           | [Live Demo](https://nadgire.github.io/Mini-Projects/Tic%20Tac%20Toe/public)           |
+| 07  | [Word Scramble](https://github.com/nadgire/Mini-Projects/tree/main/Word%20Scramble%20Game)                           | [Live Demo]()           |
