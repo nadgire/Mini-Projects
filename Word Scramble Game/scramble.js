@@ -1,3 +1,5 @@
+"use strick";
+
 const Scramble = [
   { Word: "ABANDON", Hint: "To leave behind or forsake." },
   { Word: "ANIMAL", Hint: "A living creature, typically one that is not a human." },
@@ -115,28 +117,168 @@ const Scramble = [
 const loadingAnim = document.getElementById("loadingAnim");
 const loadingPercentage = document.getElementById("loadingPercentage");
 const loadDiv = document.getElementById("loadDiv");
+const header = document.getElementById("header");
 const anim = document.getElementById("anim");
 const game = document.getElementById("game");
-var btnPlay = document.querySelector("#anim button");
+const scrambledWord = document.getElementById("scrambledWord");
+const hint = document.getElementById("hint");
+const userInput = document.getElementById("userInput");
+const headerHearts = document.getElementsByClassName("headerHearts");
+const btnEndGame = document.querySelector("#footer input[type=button]")
+const btnPlay = document.querySelector("#anim button");
+
+var score = 0;
 var count = 0;
 var timer;
+var randomWord;
+var playedWords = [];
+var index;
+
+var lives = 3;
+var hearts = 0;
 
 btnPlay.addEventListener("click", function () {
+  count = 0;
   loadDiv.classList.remove("hidden");
   timer = setInterval(playAnim, 25);
 })
 
+userInput.lastElementChild.addEventListener("click", function () {
+  var x = userInput.firstElementChild.value;
+  if (x == "") {
+    alert("Please enter your answer!")
+  }
+  else {
+    userInput.firstElementChild.setAttribute("disabled", "");
+    userInput.lastElementChild.setAttribute("disabled", "");
+    userInput.lastElementChild.style.backgroundColor = "gray";
+    if (randomWord.Word == x.toUpperCase()) {
+      userInput.firstElementChild.style.color = "green";
+      score++;
+      header.lastElementChild.textContent = "SCORE : " + score;
+
+      setTimeout(() => {
+        userInput.firstElementChild.style.color = "white";
+        playGame();
+      }, 2000);
+    }
+    else {
+      incorrctAnswer();
+    }
+  }
+})
+
+btnEndGame.addEventListener("click", function () {
+  showResult();
+})
+
 function playAnim() {
   count++;
-  console.log(count)
   if (count <= 100) {
     loadingAnim.style.width = count + "%";
-    loadingPercentage.textContent="Loading... "+count+"%";
+    loadingPercentage.textContent = "Loading... " + count + "%";
   }
   else {
     clearInterval(timer);
     loadingPercentage.innerText = "Completed";
     anim.classList.add("hidden");
     game.classList.remove("hidden");
+    setGameInitialStage();
   }
 }
+
+function setGameInitialStage() {
+  playedWords = [];
+  hearts = 0;
+  score = 0;
+  lives = 3;
+  header.firstElementChild.firstElementChild.classList.add("fa-solid");
+  header.firstElementChild.firstElementChild.nextElementSibling.classList.add("fa-solid");
+  header.firstElementChild.lastElementChild.classList.add("fa-solid");
+  header.lastElementChild.textContent = "SCORE : " + score;
+  playGame();
+}
+
+function generateIndex() {
+  return Math.floor(Math.random() * Scramble.length);
+}
+
+function playGame() {
+  userInput.firstElementChild.removeAttribute("disabled", "");
+  userInput.lastElementChild.removeAttribute("disabled", "");
+  userInput.lastElementChild.style.backgroundColor = "#facc15";
+  userInput.firstElementChild.style.color = "white";
+  userInput.firstElementChild.value = "";
+  scrambledWord.innerHTML = "";
+  scrambledWord.textContent = "";
+  userInput.firstElementChild.focus();
+
+  index = generateIndex();
+
+  for (let i = 0; i < playedWords.length; i++) {
+    if (index == playedWords[i]) {
+      i = 0;
+      index = generateIndex();
+    }
+  }
+
+  if (playedWords.length == Scramble.length) {
+    showResult();
+    // resetGame();
+  }
+
+  randomWord = Scramble[index];
+  let arr = [];
+  for (let i = 0; i < randomWord.Word.length; i++) {
+    arr.push(randomWord.Word[i]);
+  }
+
+  while (arr.length > 0) {
+    var randomIndex = Math.floor(Math.random() * arr.length)
+    var d = document.createElement("span");
+    var temp = arr.splice(randomIndex, 1);
+    d.textContent = temp;
+    scrambledWord.appendChild(d);
+  }
+  hint.textContent = "Hint : " +randomWord.Hint;
+  playedWords.push(index);
+}
+
+function showResult() {
+  alert("Game ended. Your total score is : " + score);
+  resetGame();
+}
+
+function showCorrectResultOnFail() {
+  userInput.firstElementChild.style.color = "yellow";
+  userInput.firstElementChild.value = randomWord.Word;
+}
+
+function incorrctAnswer() {
+  lives--;
+  headerHearts[hearts].classList.remove("fa-solid");
+  headerHearts[hearts].classList.add("fa-regular");
+  hearts++;
+  userInput.firstElementChild.style.color = "red";
+  if (lives == 0) {
+    setTimeout(() => {
+      showResult();
+    }, 3000);
+  }
+  setTimeout(() => {
+    showCorrectResultOnFail();
+
+  }, 2000);
+
+  setTimeout(() => {
+    playGame();
+  }, 4000);
+}
+
+function resetGame() {
+  loadDiv.classList.add("hidden");
+  anim.classList.remove("hidden");
+  game.classList.add("hidden");
+  setGameInitialStage();
+}
+

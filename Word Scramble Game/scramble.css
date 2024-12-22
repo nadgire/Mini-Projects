@@ -1,0 +1,42 @@
+#scrambledWord span {
+    background-color: white;
+    width: 50px !important;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: gray 1px dashed;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.title {
+    width: 40px;
+    height: 40px;
+    border: 2px dashed white;
+    text-align: center;
+    background-color: #230e41;
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width:768px) {
+    #scrambledWord span {
+        width: 80px !important;
+        height: 80px;
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .title {
+        width: 80px;
+        height: 80px;
+        font-size: 70px;
+        font-weight: 700;
+    }
+}
+
