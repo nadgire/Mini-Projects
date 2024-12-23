@@ -145,6 +145,7 @@ btnPlay.addEventListener("click", function () {
 
 userInput.lastElementChild.addEventListener("click", submitAnswer);
 userInput.firstElementChild.addEventListener("keypress", function (event) {
+  event.preventDefault;
   console.log(event);
   console.log(event.key);
   if (event.key == "Enter") {
