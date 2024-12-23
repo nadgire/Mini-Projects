@@ -217,7 +217,7 @@ function playGame() {
 
   for (let i = 0; i < playedWords.length; i++) {
     if (index == playedWords[i]) {
-      i = 0;
+      i = -1;
       index = generateIndex();
     }
   }
