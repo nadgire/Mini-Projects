@@ -143,7 +143,14 @@ btnPlay.addEventListener("click", function () {
   timer = setInterval(playAnim, 25);
 })
 
-userInput.lastElementChild.addEventListener("click", function () {
+userInput.lastElementChild.addEventListener("click", submitAnswer);
+userInput.firstElementChild.addEventListener("keypress", function (event) {
+  if (event.key == "Enter") {
+    submitAnswer()
+  }
+})
+
+function submitAnswer() {
   var x = userInput.firstElementChild.value;
   if (x == "") {
     alert("Please enter your answer!")
@@ -166,7 +173,7 @@ userInput.lastElementChild.addEventListener("click", function () {
       incorrctAnswer();
     }
   }
-})
+}
 
 btnEndGame.addEventListener("click", function () {
   showResult();
@@ -240,7 +247,7 @@ function playGame() {
     d.textContent = temp;
     scrambledWord.appendChild(d);
   }
-  hint.textContent = "Hint : " +randomWord.Hint;
+  hint.textContent = "Hint : " + randomWord.Hint;
   playedWords.push(index);
 }
 
