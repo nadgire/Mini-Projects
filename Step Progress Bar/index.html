@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <article>
+        <section class="w-[300px] md:w-[650px] mx-auto py-10 space-y-8 md:border-2 md:border-black rounded-md mt-10">
+            <!-- <label for="simple" class="">Simple</label> -->
+
+            <div class="w-[300px] md:w-[600px] flex justify-between py-2 rounded-md relative mx-auto">
+                <div class="absolute w-full h-1 bg-slate-200 top-1/2 -translate-y-1/2">
+                    <div id="progressBar" class="bg-blue-400 w-[0%] h-1 duration-200">
+
+                    </div>
+                </div>
+                <div class="w-10 h-10 bg-blue-400 relative rounded-full totalSteps">
+                    <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 ">
+                        1
+                    </div>
+                </div>
+                <div class="w-10 h-10 bg-slate-200 relative rounded-full totalSteps">
+                    <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 ">
+                        2
+                    </div>
+                </div>
+                <div class="w-10 h-10 bg-slate-200 relative rounded-full totalSteps">
+                    <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 ">
+                        3
+                    </div>
+                </div>
+                <div class="w-10 h-10 bg-slate-200 relative rounded-full totalSteps">
+                    <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 ">
+                        4
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center space-x-3">
+                <input type="button" value="Previous" class="w-[100px] border-2 border-gray-400 py-1 rounded-md text-gray-400 transition-all" disabled>
+                <input type="button" value="Next" class="w-[100px] border-2 border-blue-400 py-1 rounded-md transition-all">
+                <input type="button" value="Submit" class="hidden w-[100px] border-2 bg-blue-400 py-1 rounded-md hover:text-white">
+            </div>
+        </section>
+        <!-- <section>
+            <label for="simple">Panels</label>
+        </section>        
+        <section>
+            <label for="simple">Panels with border</label>
+        </section>        
+        <section>
+            <label for="simple">Circle</label>
+        </section>        
+        <section>
+            <label for="simple">Numbers</label>
+        </section>         -->
+    </article>
+    <script src="index.js"></script>
+</body>
+
+</html>
