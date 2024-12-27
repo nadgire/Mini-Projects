@@ -11,7 +11,7 @@
 
 <body class="bg-gradient-to-b from-cyan-400 to-blue-400 h-[100vh] bg-no-repeat">
     <section class="text-center max-w-[700px] mx-auto bg-[rgba(0,0,0,0.2)] rounded-md h-[100vh] py-10  text-white">
-        <form id="signupForm" onsubmit="return checkForValidations()" action="#" method="post" name="signupForm">
+        <form id="signupForm" onsubmit="return checkForValidations(event)" action="#" method="post" name="signupForm">
             <div>
                 <h1 class="text-3xl font-bold tracking-wider">Signup Form</h1>
             </div>
@@ -19,6 +19,7 @@
                 <input name="userFName" type="text" placeholder="Full Name" class="textInputFormatting capitalize w-full" autofocus>
                 <div id="nameError" class="mt-2 text-xs text-red-600 text-left hidden"></div>
                 <input name="userEmailAddress" type="email" placeholder="Email" class="textInputFormatting w-full">
+                <div id="emailError" class="mt-2 text-xs text-red-600 text-left hidden"></div>
                 <input name="userPassword" type="password" placeholder="Password" class="textInputFormatting w-full">
                 <input name="userPasswordConfirm" type="password" placeholder="Confirm Password" class="textInputFormatting w-full">
                 <div class="text-left">

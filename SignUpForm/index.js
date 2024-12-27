@@ -110,15 +110,16 @@ function fillDataListCity() {
 }
 
 function checkForValidations(event) {
+    event.preventDefault();
     if (!fullnameValidation() || !emailValidation()) return false;
     return true;
 }
 
-signupForm.addEventListener("keypress", function (event) {
-    if (event.key == "Enter") {
-        event.preventDefault();
-    }
-})
+// signupForm.addEventListener("keypress", function (event) {
+//     if (event.key == "Enter") {
+//         event.preventDefault();
+//     }
+// })
 
 //pattern="^[A-Za-z]+\s[A-Za-z]+\s[A-Za-z]+"
 //Full Name Validation
@@ -140,6 +141,29 @@ function fullnameValidation() {
             return false;
         }
         nameError.classList.add("hidden")
+        return true;
+    }
+}
+
+//Email Validation
+function emailValidation() {
+    var emailError = document.getElementById("emailError");
+
+    if (document.forms["signupForm"]["userEmailAddress"].value === "") {
+        emailError.classList.remove("hidden");
+        emailError.innerHTML = "Email cannot be empty!";
+        return false;
+    }
+    else {
+        emailError.classList.add("hidden");
+        // console.log("Hi")
+        var pattern = new RegExp("^[A-Za-z]+([-'\\s][A-Za-z]+){2}$");
+        if (!(pattern.test(document.forms["signupForm"]["userEmailAddress"].value))) {
+            emailError.classList.remove("hidden");
+            emailError.innerHTML = "Enter email in correct format";
+            return false;
+        }
+        emailError.classList.add("hidden")
         return true;
     }
 }
