@@ -11,44 +11,45 @@
 
 <body class="bg-gradient-to-b from-cyan-400 to-blue-400 h-[100vh] bg-no-repeat">
     <section class="text-center max-w-[700px] mx-auto bg-[rgba(0,0,0,0.2)] rounded-md h-[100vh] py-10  text-white">
-        <form>
+        <form id="signupForm" onsubmit="return checkForValidations()" action="#" method="post" name="signupForm">
             <div>
                 <h1 class="text-3xl font-bold tracking-wider">Signup Form</h1>
             </div>
             <div class="px-16 space-y-4 mt-8">
-                <input type="text" placeholder="Full Name" class="textInputFormatting capitalize w-full" autofocus pattern="^[A-Za-z]+\s[A-Za-z]+\s[A-Za-z]+">
-                <input type="email" placeholder="Email" class="textInputFormatting w-full">
-                <input type="password" placeholder="Password" class="textInputFormatting w-full">
-                <input type="password" placeholder="Confirm Password" class="textInputFormatting w-full">
+                <input name="userFName" type="text" placeholder="Full Name" class="textInputFormatting capitalize w-full" autofocus>
+                <div id="nameError" class="mt-2 text-xs text-red-600 text-left hidden"></div>
+                <input name="userEmailAddress" type="email" placeholder="Email" class="textInputFormatting w-full">
+                <input name="userPassword" type="password" placeholder="Password" class="textInputFormatting w-full">
+                <input name="userPasswordConfirm" type="password" placeholder="Confirm Password" class="textInputFormatting w-full">
                 <div class="text-left">
                     <span>Date of Birth : </span>
-                    <input type="date" class="textInputFormatting w-1/2">
+                    <input name="userDob" type="date" class="textInputFormatting w-1/2">
                 </div>
                 <div class="text-left">
                     <span>Time of Birth : </span>
-                    <input type="time" class="textInputFormatting w-1/2">
+                    <input name="userTob" type="time" class="textInputFormatting w-1/2">
                 </div>
 
                 <div class="text-left">
                     <span>Select Gender : </span>
-                    <input type="radio" name="gender" value="Male"> Male
-                    <input type="radio" name="gender" value="Female"> Female
+                    <input type="radio" name="userGender" value="Male"> Male
+                    <input type="radio" name="userGender" value="Female"> Female
                 </div>
 
                 <div class="flex justify-between space-x-3">
-                    <input type="text" name="" list="phoneCountryCode" class="selectBoxFormatting w-1/3" placeholder="Country Code">
+                    <input type="text" name="userCountry" list="phoneCountryCode" class="selectBoxFormatting w-1/3" placeholder="Country Code">
                     <datalist id="phoneCountryCode" class="">
                     </datalist>
 
-                    <input type="tel" placeholder ="Phone number" class="textInputFormatting w-2/3" maxlength="10" pattern="[1-9]{1}[0-9]{9}">
+                    <input name="userMobile" type="tel" placeholder ="Phone number" class="textInputFormatting w-2/3" maxlength="10" pattern="[1-9]{1}[0-9]{9}">
                 </div>
 
                 <div class="flex justify-between space-x-3">
-                    <input type="text" id="txtState" name="" list="states" class="selectBoxFormatting w-1/2" placeholder="State">
+                    <input type="text" id="txtState" name="userState" list="states" class="selectBoxFormatting w-1/2" placeholder="State">
                     <datalist id="states" class="">
                     </datalist>
 
-                    <input type="text" id="txtCity" name="" list="city" class="selectBoxFormatting w-1/2" placeholder="City">
+                    <input type="text" id="txtCity" name="userCity" list="city" class="selectBoxFormatting w-1/2" placeholder="City">
                     <datalist id="city" class="">
                     </datalist>
 
@@ -56,28 +57,26 @@
 
                 <div class="space-x-3 text-left flex items-center">
                     <span>Rate yourself in English out of 10 : </span> 
-                    <input id="englishRange" type="range" min="0" max="10" oninput="englishOutput.value=englishRange.value" value="1">
+                    <input name="userEnglishRatings" id="englishRange" type="range" min="0" max="10" oninput="englishOutput.value=englishRange.value" value="1">
                     <output id="englishOutput"></output>
                 </div>
 
                 <div class="text-left flex items-center space-x-3">
                     <span>Your Fav Color : </span>
-                    <input type="color" value="#ff0000">
+                    <input name="userColor" type="color" value="#ff0000">
                 </div>
 
-                <input type="url" placeholder="Linkedin Profile URL" class="textInputFormatting w-full">
+                <input name="userLinkedUrl" type="url" placeholder="Linkedin Profile URL" class="textInputFormatting w-full">
 
                 <div class="text-left">
                     <span>Upload Resume : </span>
-                    <input type="file">
+                    <input name="userFile" type="file" class="">
                 </div>
 
             </div>
             <div class="mt-8 space-x-4">
-                <input formaction="" formmethod="post" type="reset" name="" id="btnClear" value="Clear"
-                    class="w-36 py-1 border-2 rounded-md cursor-pointer">
-                <input formaction="" formmethod="post" type="submit" name="" id="btnSubmit" value="Sign Up"
-                    class="w-36 py-1 border-2 rounded-md cursor-pointer">
+                <input type="reset" name="" id="btnClear" value="Clear" class="w-36 py-1 border-2 rounded-md cursor-pointer">
+                <input type="submit" name="" id="btnSubmit" value="Sign Up" class="w-36 py-1 border-2 rounded-md cursor-pointer">
             </div>
         </form>
     </section>

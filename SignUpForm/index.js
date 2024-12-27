@@ -12,6 +12,7 @@
 // .then(result => console.log(result))
 // .catch(error => console.log('error', error));
 
+const signupForm = document.getElementById("signupForm");
 const phoneCountryCode = document.querySelector("input[list=phoneCountryCode]");
 const selectCountry = document.getElementById("phoneCountryCode");
 const selectstate = document.getElementById("states");
@@ -69,6 +70,7 @@ function loadStates(event) {
 }
 
 function fillDataListStates() {
+    selectstate.innerHTML = "";
     for (let i = 0; i < statesResult.length; i++) {
         selectstate.innerHTML += "<option>" + statesResult[i].name + "</option>";
     }
@@ -100,8 +102,44 @@ function loadCities(event) {
     }
 }
 
-function fillDataListCity(){
+function fillDataListCity() {
+    selectcity.innerHTML = "";
     for (let i = 0; i < cityResult.length; i++) {
         selectcity.innerHTML += "<option>" + cityResult[i].name + "</option>";
+    }
+}
+
+function checkForValidations(event) {
+    if (!fullnameValidation() || !emailValidation()) return false;
+    return true;
+}
+
+signupForm.addEventListener("keypress", function (event) {
+    if (event.key == "Enter") {
+        event.preventDefault();
+    }
+})
+
+//pattern="^[A-Za-z]+\s[A-Za-z]+\s[A-Za-z]+"
+//Full Name Validation
+function fullnameValidation() {
+    var nameError = document.getElementById("nameError");
+
+    if (document.forms["signupForm"]["userFName"].value === "") {
+        nameError.classList.remove("hidden");
+        nameError.innerHTML = "Name cannot be empty!";
+        return false;
+    }
+    else {
+        nameError.classList.add("hidden");
+        // console.log("Hi")
+        var pattern = new RegExp("^[A-Za-z]+([-'\\s][A-Za-z]+){2}$");
+        if (!(pattern.test(document.forms["signupForm"]["userFName"].value))) {
+            nameError.classList.remove("hidden");
+            nameError.innerHTML = "Enter 'Full name'";
+            return false;
+        }
+        nameError.classList.add("hidden")
+        return true;
     }
 }
