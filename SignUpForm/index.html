@@ -16,12 +16,18 @@
                 <h1 class="text-3xl font-bold tracking-wider">Signup Form</h1>
             </div>
             <div class="px-16 space-y-4 mt-8">
-                <input type="text" placeholder="Full Name" class="textInputFormatting capitalize" autofocus pattern="^[A-Za-z]+\s[A-Za-z]+\s[A-Za-z]+">
-                <input type="email" placeholder="Email" class="textInputFormatting">
-                <input type="password" placeholder="Password" class="textInputFormatting">
-                <input type="password" placeholder="Confirm Password" class="textInputFormatting">
-                <input type="date" placeholder="Date of Birth" class="textInputFormatting">
-                <input type="time" placeholder="Time of Birth" class="textInputFormatting">
+                <input type="text" placeholder="Full Name" class="textInputFormatting capitalize w-full" autofocus pattern="^[A-Za-z]+\s[A-Za-z]+\s[A-Za-z]+">
+                <input type="email" placeholder="Email" class="textInputFormatting w-full">
+                <input type="password" placeholder="Password" class="textInputFormatting w-full">
+                <input type="password" placeholder="Confirm Password" class="textInputFormatting w-full">
+                <div class="text-left">
+                    <span>Date of Birth : </span>
+                    <input type="date" class="textInputFormatting w-1/2">
+                </div>
+                <div class="text-left">
+                    <span>Time of Birth : </span>
+                    <input type="time" class="textInputFormatting w-1/2">
+                </div>
 
                 <div class="text-left">
                     <span>Select Gender : </span>
@@ -30,11 +36,22 @@
                 </div>
 
                 <div class="flex justify-between space-x-3">
-                    <input type="text" name="" list="phoneCountryCode" class="selectBoxFormatting" placeholder="Country Code">
+                    <input type="text" name="" list="phoneCountryCode" class="selectBoxFormatting w-1/3" placeholder="Country Code">
                     <datalist id="phoneCountryCode" class="">
                     </datalist>
 
-                    <input type="tel" placeholder ="Phone number" class="textInputFormatting" maxlength="10" pattern="[1-9]{1}[0-9]{9}">
+                    <input type="tel" placeholder ="Phone number" class="textInputFormatting w-2/3" maxlength="10" pattern="[1-9]{1}[0-9]{9}">
+                </div>
+
+                <div class="flex justify-between space-x-3">
+                    <input type="text" name="" list="states" class="selectBoxFormatting w-1/2" placeholder="State">
+                    <datalist id="states" class="">
+                    </datalist>
+
+                    <input type="text" name="" list="city" class="selectBoxFormatting w-1/2" placeholder="City">
+                    <datalist id="city" class="">
+                    </datalist>
+
                 </div>
 
                 <div class="space-x-3 text-left flex items-center">
