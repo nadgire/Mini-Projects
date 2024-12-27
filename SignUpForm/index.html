@@ -6,30 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body class="bg-gradient-to-b from-cyan-400 to-blue-400 h-[100vh] bg-no-repeat">
-    <section class="text-center max-w-[700px] mx-auto bg-[rgba(0,0,0,0.2)] rounded-md h-[100vh] py-10">
+    <section class="text-center max-w-[700px] mx-auto bg-[rgba(0,0,0,0.2)] rounded-md h-[100vh] py-10  text-white">
         <form>
             <div>
                 <h1 class="text-3xl font-bold tracking-wider">Signup Form</h1>
             </div>
             <div class="px-16 space-y-4 mt-8">
-                <input type="text" placeholder="Full Name" class="w-full px-2 py-2 rounded-md">
-                <input type="email" placeholder="Email" class="w-full px-2 py-2 rounded-md">
-                <input type="password" placeholder="Password" class="w-full px-2 py-2 rounded-md">
-                <input type="password" placeholder="Confirm Password" class="w-full px-2 py-2 rounded-md">
+                <input type="text" placeholder="Full Name" class="textInputFormatting capitalize" autofocus pattern="^[A-Za-z]+\s[A-Za-z]+\s[A-Za-z]+">
+                <input type="email" placeholder="Email" class="textInputFormatting">
+                <input type="password" placeholder="Password" class="textInputFormatting">
+                <input type="password" placeholder="Confirm Password" class="textInputFormatting">
+                <input type="date" placeholder="Date of Birth" class="textInputFormatting">
+                <input type="time" placeholder="Time of Birth" class="textInputFormatting">
+
+                <div class="text-left">
+                    <span>Select Gender : </span>
+                    <input type="radio" name="gender" value="Male"> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                </div>
+
+                <div class="flex justify-between space-x-3">
+                    <input type="text" name="" list="phoneCountryCode" class="selectBoxFormatting" placeholder="Country Code">
+                    <datalist id="phoneCountryCode" class="">
+                    </datalist>
+
+                    <input type="tel" placeholder ="Phone number" class="textInputFormatting" maxlength="10" pattern="[1-9]{1}[0-9]{9}">
+                </div>
+
+                <div class="space-x-3 text-left flex items-center">
+                    <span>Rate yourself in English out of 10 : </span> 
+                    <input id="englishRange" type="range" min="0" max="10" oninput="englishOutput.value=englishRange.value" value="1">
+                    <output id="englishOutput"></output>
+                </div>
+
+                <div class="text-left flex items-center space-x-3">
+                    <span>Your Fav Color : </span>
+                    <input type="color" value="#ff0000">
+                </div>
+
+                <input type="url" placeholder="Linkedin Profile URL" class="textInputFormatting">
+
+                <div class="text-left">
+                    <span>Upload Resume : </span>
+                    <input type="file">
+                </div>
 
             </div>
             <div class="mt-8 space-x-4">
-
-                <input formaction="" formmethod="post" type="button" name="" id="" value="Clear"
+                <input formaction="" formmethod="post" type="reset" name="" id="btnClear" value="Clear"
                     class="w-36 py-1 border-2 rounded-md cursor-pointer">
-                <input formaction="" formmethod="post" type="submit" name="" id="" value="Sign Up"
+                <input formaction="" formmethod="post" type="submit" name="" id="btnSubmit" value="Sign Up"
                     class="w-36 py-1 border-2 rounded-md cursor-pointer">
             </div>
         </form>
     </section>
+
+    <script src="index.js"></script>
 </body>
 
 </html>

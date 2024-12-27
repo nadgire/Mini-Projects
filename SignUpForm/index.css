@@ -1,0 +1,33 @@
+body{
+    letter-spacing: 2px;
+}
+
+.textInputFormatting {
+  border-image: linear-gradient(to right, rgb(255, 255, 0) 0%, #d42121 100%) 1;
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  background-color: transparent;
+  width: 100%;
+  padding: 4px 8px;
+  font-weight: 500;
+  outline: none;
+}
+
+.selectBoxFormatting {
+  border-image: linear-gradient(to right, rgb(255, 255, 0) 0%, #d42121 100%) 1;
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  background-color: transparent;
+  width: 40%;
+  padding: 4px 8px;
+  font-weight: 500;
+  outline: none;
+}
+
+.selectBoxFormatting::placeholder{
+    color: rgb(187, 187, 192);
+}
+
+.textInputFormatting::placeholder {
+  color: rgb(187, 187, 192);
+}
