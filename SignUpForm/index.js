@@ -110,8 +110,14 @@ function fillDataListCity() {
 }
 
 function checkForValidations(event) {
+
     event.preventDefault();
-    if (!fullnameValidation() || !emailValidation()) return false;
+    // if (fullnameValidation() == false || emailValidation() == false || passwordValidation() == false || dobValidation() == false || tobValidation()==false) genderValidation()==false || countryAndPhoneValidation()==false){
+    //     return false;
+    // }
+
+    if (countryAndPhoneValidation()) return false;
+
     return true;
 }
 
@@ -121,7 +127,6 @@ function checkForValidations(event) {
 //     }
 // })
 
-//pattern="^[A-Za-z]+\s[A-Za-z]+\s[A-Za-z]+"
 //Full Name Validation
 function fullnameValidation() {
     var nameError = document.getElementById("nameError");
@@ -133,7 +138,6 @@ function fullnameValidation() {
     }
     else {
         nameError.classList.add("hidden");
-        // console.log("Hi")
         var pattern = new RegExp("^[A-Za-z]+([-'\\s][A-Za-z]+){2}$");
         if (!(pattern.test(document.forms["signupForm"]["userFName"].value))) {
             nameError.classList.remove("hidden");
@@ -156,14 +160,125 @@ function emailValidation() {
     }
     else {
         emailError.classList.add("hidden");
-        // console.log("Hi")
-        var pattern = new RegExp("^[A-Za-z]+([-'\\s][A-Za-z]+){2}$");
-        if (!(pattern.test(document.forms["signupForm"]["userEmailAddress"].value))) {
+        var emailPattern = new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
+        // console.log(emailPattern.test(document.forms["signupForm"]["userEmailAddress"].value));
+        if (!(emailPattern.test(document.forms["signupForm"]["userEmailAddress"].value))) {
             emailError.classList.remove("hidden");
             emailError.innerHTML = "Enter email in correct format";
             return false;
         }
         emailError.classList.add("hidden")
         return true;
+    }
+}
+
+// Password validation
+function passwordValidation() {
+    const passwordError = document.getElementById("passwordError");
+    const confirmPasswordError = document.getElementById("confirmPasswordError");
+
+    if (document.forms["signupForm"]["userPassword"].value == "") {
+        passwordError.classList.remove("hidden");
+        passwordError.innerHTML = "Enter Passward";
+        confirmPasswordError.classList.add("hidden");
+    }
+    else if (document.forms["signupForm"]["userPasswordConfirm"].value == "") {
+        confirmPasswordError.classList.remove("hidden");
+        passwordError.classList.add("hidden");
+        confirmPasswordError.innerHTML = "Enter Passward to Confirm";
+    }
+    else {
+
+        var passwordPattern = new RegExp("[A-Za-z0-9!@#$%^&*-_.?]{8,20}");
+        if (passwordPattern.test(document.forms["signupForm"]["userPasswordConfirm"].value)) {
+            if (document.forms["signupForm"]["userPasswordConfirm"].value == document.forms["signupForm"]["userPassword"].value) {
+                console.log(document.forms["signupForm"]["userPasswordConfirm"].value, document.forms["signupForm"]["userPassword"].value)
+                confirmPasswordError.classList.add("hidden");
+                passwordError.classList.add("hidden");
+                return true;
+            }
+            else {
+                console.log("first else")
+
+                confirmPasswordError.classList.remove("hidden");
+                confirmPasswordError.innerHTML = "Please re-enter the password to match";
+                return false;
+            }
+        }
+        else {
+            console.log("2nd else")
+            passwordError.classList.remove("hidden");
+            passwordError.innerHTML = "Password Criteria: <br>At least 1 uppercase letter<br>At least 1 lowercase letter<br>At least 1 number<br>At least 1 special Character (!@#$%^&*-_.?)<br>Length should be between 8-20.";
+            return false;
+        }
+    }
+}
+
+function dobValidation() {
+    const dobError = document.getElementById("dobError");
+    var selectedDate = new Date(document.forms["signupForm"]["userDob"].value);
+    var today = new Date();
+
+    if (document.forms["signupForm"]["userDob"].value == "") {
+        dobError.classList.remove("hidden");
+        dobError.textContent = "Please enter DOB";
+        return false;
+    }
+
+    else {
+        if (selectedDate.getFullYear() <= (today.getFullYear() - 21)) {
+            dobError.classList.add("hidden");
+            return true;
+        }
+        else {
+            dobError.classList.remove("hidden");
+            dobError.textContent = "Please enter valid DOB"
+            return false;
+        }
+    }
+}
+
+function tobValidation() {
+    const tobError = document.getElementById("tobError");
+    if (document.forms["signupForm"]["userTob"].value == "") {
+        tobError.classList.remove("hidden");
+        tobError.textContent = "Please enter TOB";
+        return false;
+    }
+    else {
+        tobError.classList.add("hidden");
+        return true;
+    }
+}
+
+function genderValidation() {
+    const genderRadios = document.querySelectorAll("input[type=radio]");
+    const genderError = document.getElementById("genderError");
+    let selected = false;
+    console.log(genderRadios)
+    for (let i = 0; i < genderRadios.length; i++) {
+        if (genderRadios[i].checked) {
+            genderError.classList.add("hidden");
+            selected = true;
+            return selected;
+        }
+    }
+    if (selected == false) {
+        genderError.classList.remove("hidden");
+        genderError.textContent = "Please select gender";
+        return false;
+    }
+}
+
+function countryAndPhoneValidation() {
+    console.log(document.forms["signupForm"]["countryCode"].value);
+    console.log(document.forms["signupForm"]["userMobile"].value);
+    const countryAndPhoneError = document.getElementById("countryAndPhoneError");
+    if (document.forms["signupForm"]["countryCode"].value == "" || document.forms["signupForm"]["userMobile"].value == "") {
+
+    }
+    else{
+        countryAndPhoneError.classList.remove("hidden");
+        countryAndPhoneError.textContent("Enter Country Code and Phone Number");
     }
 }

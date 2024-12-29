@@ -9,41 +9,51 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body class="bg-gradient-to-b from-cyan-400 to-blue-400 h-[100vh] bg-no-repeat">
-    <section class="text-center max-w-[700px] mx-auto bg-[rgba(0,0,0,0.2)] rounded-md h-[100vh] py-10  text-white">
-        <form id="signupForm" onsubmit="return checkForValidations(event)" action="#" method="post" name="signupForm">
+<body class="bg-gradient-to-b from-cyan-400 to-blue-400 h-auto bg-no-repeat">
+    <section class="text-center max-w-[700px] mx-auto bg-[rgba(0,0,0,0.2)] rounded-md h-auto py-10  text-white">
+        <form id="signupForm" onsubmit="checkForValidations(event); return; " action="#" method="post" name="signupForm">
             <div>
                 <h1 class="text-3xl font-bold tracking-wider">Signup Form</h1>
             </div>
             <div class="px-16 space-y-4 mt-8">
                 <input name="userFName" type="text" placeholder="Full Name" class="textInputFormatting capitalize w-full" autofocus>
                 <div id="nameError" class="mt-2 text-xs text-red-600 text-left hidden"></div>
+
                 <input name="userEmailAddress" type="email" placeholder="Email" class="textInputFormatting w-full">
                 <div id="emailError" class="mt-2 text-xs text-red-600 text-left hidden"></div>
+
                 <input name="userPassword" type="password" placeholder="Password" class="textInputFormatting w-full">
+                <div id="passwordError" class="mt-2 text-xs text-red-600 text-left hidden"></div>
                 <input name="userPasswordConfirm" type="password" placeholder="Confirm Password" class="textInputFormatting w-full">
+                <div id="confirmPasswordError" class="mt-2 text-xs text-red-600 text-left hidden"></div>
+
                 <div class="text-left">
                     <span>Date of Birth : </span>
                     <input name="userDob" type="date" class="textInputFormatting w-1/2">
                 </div>
+                <div id="dobError" class="mt-2 text-xs text-red-600 text-left hidden"></div>
+
                 <div class="text-left">
                     <span>Time of Birth : </span>
                     <input name="userTob" type="time" class="textInputFormatting w-1/2">
                 </div>
+                <div id="tobError" class="mt-2 text-xs text-red-600 text-left hidden"></div>
 
                 <div class="text-left">
                     <span>Select Gender : </span>
-                    <input type="radio" name="userGender" value="Male"> Male
-                    <input type="radio" name="userGender" value="Female"> Female
+                    <input id="radioMale" type="radio" name="userGender" value="Male"> Male
+                    <input id="radioFemale" type="radio" name="userGender" value="Female"> Female
                 </div>
+                <div id="genderError" class="mt-2 text-xs text-red-600 text-left hidden"></div>
 
                 <div class="flex justify-between space-x-3">
-                    <input type="text" name="userCountry" list="phoneCountryCode" class="selectBoxFormatting w-1/3" placeholder="Country Code">
+                    <input id="countryCode" type="text" name="userCountry" list="phoneCountryCode" class="selectBoxFormatting w-1/3" placeholder="Country Code">
                     <datalist id="phoneCountryCode" class="">
                     </datalist>
 
-                    <input name="userMobile" type="tel" placeholder ="Phone number" class="textInputFormatting w-2/3" maxlength="10" pattern="[1-9]{1}[0-9]{9}">
+                    <input id="userMobile" name="userMobile" type="number" placeholder ="Phone number" class="textInputFormatting w-2/3">
                 </div>
+                <div id="countryAndPhoneError" class="mt-2 text-xs text-red-600 text-left hidden"></div>
 
                 <div class="flex justify-between space-x-3">
                     <input type="text" id="txtState" name="userState" list="states" class="selectBoxFormatting w-1/2" placeholder="State">
