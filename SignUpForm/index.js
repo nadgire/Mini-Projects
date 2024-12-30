@@ -112,13 +112,15 @@ function fillDataListCity() {
 function checkForValidations(event) {
 
     event.preventDefault();
-    // if (fullnameValidation() == false || emailValidation() == false || passwordValidation() == false || dobValidation() == false || tobValidation()==false) genderValidation()==false || countryAndPhoneValidation()==false){
-    //     return false;
-    // }
+    if (fullnameValidation() == false || emailValidation() == false || passwordValidation() == false || 
+        dobValidation() == false || tobValidation() == false || genderValidation() == false || countryAndPhoneValidation() == false) {
+        return false;
+    }
+    else {
+        return true;
+    }
 
-    if (countryAndPhoneValidation()) return false;
-
-    return true;
+    //if (countryAndPhoneValidation()) return false;
 }
 
 // signupForm.addEventListener("keypress", function (event) {
@@ -277,7 +279,7 @@ function countryAndPhoneValidation() {
     if (document.forms["signupForm"]["countryCode"].value == "" || document.forms["signupForm"]["userMobile"].value == "") {
 
     }
-    else{
+    else {
         countryAndPhoneError.classList.remove("hidden");
         countryAndPhoneError.textContent("Enter Country Code and Phone Number");
     }
