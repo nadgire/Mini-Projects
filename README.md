@@ -11,3 +11,4 @@
 | 07  | [Word Scramble Game](https://github.com/nadgire/Mini-Projects/tree/main/Word%20Scramble%20Game)                           | [Live Demo](https://nadgire.github.io/Mini-Projects/Word%20Scramble%20Game/scramble.html)           |
 | 08  | [Step Progress Bar](https://github.com/nadgire/Mini-Projects/tree/main/Step%20Progress%20Bar)                           | [Live Demo](https://nadgire.github.io/Mini-Projects/Step%20Progress%20Bar)           |
 | 09  | [Sign Up Form with Validations](https://github.com/nadgire/Mini-Projects/tree/main/SignUpForm)                           | [Live Demo](https://nadgire.github.io/Mini-Projects/SignUpForm)           |
+| 10  | [Solar System](https://github.com/nadgire/Mini-Projects/tree/main/SolarSystem)                           | [Live Demo](https://nadgire.github.io/Mini-Projects/SolarSystem)           |
