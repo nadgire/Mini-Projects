@@ -17,7 +17,7 @@ const phoneCountryCode = document.querySelector("input[list=phoneCountryCode]");
 const selectCountry = document.getElementById("phoneCountryCode");
 const selectstate = document.getElementById("states");
 const selectcity = document.getElementById("city");
-const txtState = document.getElementById("txtState");
+const userState = document.getElementById("userState");
 const txtCity = document.getElementById("txtCity");
 
 var countryResponse, stateResponse, cityResponse;
@@ -74,7 +74,7 @@ function fillDataListStates() {
     for (let i = 0; i < statesResult.length; i++) {
         selectstate.innerHTML += "<option>" + statesResult[i].name + "</option>";
     }
-    txtState.addEventListener("input", loadCities);
+    userState.addEventListener("input", loadCities);
 }
 
 function loadCities(event) {
@@ -109,18 +109,19 @@ function fillDataListCity() {
     }
 }
 
-function checkForValidations(event) {
-
-    event.preventDefault();
-    if (fullnameValidation() == false || emailValidation() == false || passwordValidation() == false || 
-        dobValidation() == false || tobValidation() == false || genderValidation() == false || countryAndPhoneValidation() == false) {
+function checkForValidations() {
+    fullnameValidation(); emailValidation(); passwordValidation(); dobValidation();
+    tobValidation(); genderValidation(); countryAndPhoneValidation(); stateValidation(); cityValidation();
+    ratingValidation(); urlValidation(); fileValidation();
+    if (!fullnameValidation() || !emailValidation() || !passwordValidation() || !dobValidation() || !tobValidation() ||
+        !genderValidation() || !countryAndPhoneValidation() || !stateValidation() || !cityValidation() || !ratingValidation() ||
+        !urlValidation() || !fileValidation()) {
         return false;
     }
     else {
         return true;
     }
 
-    //if (countryAndPhoneValidation()) return false;
 }
 
 // signupForm.addEventListener("keypress", function (event) {
@@ -194,7 +195,6 @@ function passwordValidation() {
         var passwordPattern = new RegExp("[A-Za-z0-9!@#$%^&*-_.?]{8,20}");
         if (passwordPattern.test(document.forms["signupForm"]["userPasswordConfirm"].value)) {
             if (document.forms["signupForm"]["userPasswordConfirm"].value == document.forms["signupForm"]["userPassword"].value) {
-                console.log(document.forms["signupForm"]["userPasswordConfirm"].value, document.forms["signupForm"]["userPassword"].value)
                 confirmPasswordError.classList.add("hidden");
                 passwordError.classList.add("hidden");
                 return true;
@@ -257,7 +257,6 @@ function genderValidation() {
     const genderRadios = document.querySelectorAll("input[type=radio]");
     const genderError = document.getElementById("genderError");
     let selected = false;
-    console.log(genderRadios)
     for (let i = 0; i < genderRadios.length; i++) {
         if (genderRadios[i].checked) {
             genderError.classList.add("hidden");
@@ -273,14 +272,91 @@ function genderValidation() {
 }
 
 function countryAndPhoneValidation() {
-    console.log(document.forms["signupForm"]["countryCode"].value);
-    console.log(document.forms["signupForm"]["userMobile"].value);
     const countryAndPhoneError = document.getElementById("countryAndPhoneError");
-    if (document.forms["signupForm"]["countryCode"].value == "" || document.forms["signupForm"]["userMobile"].value == "") {
-
+    if (document.forms["signupForm"]["userCountry"].value == "" || document.forms["signupForm"]["userMobile"].value == "") {
+        countryAndPhoneError.classList.remove("hidden");
+        countryAndPhoneError.textContent = "Enter Country Code and Phone Number";
+        return false;
     }
     else {
+        var countryCode = document.getElementById("countryCode");
+        for (let i = 0; i < countryResult.length; i++) {
+            if (countryCode.value == ("+" + countryResult[i].phonecode + " " + countryResult[i].name)) {
+                countryAndPhoneError.classList.add("hidden");
+                return true;
+            }
+        }
         countryAndPhoneError.classList.remove("hidden");
-        countryAndPhoneError.textContent("Enter Country Code and Phone Number");
+        countryAndPhoneError.textContent = "Please select value from the list."
+        return false;
     }
+}
+
+function stateValidation() {
+    var stateCityError = document.getElementById("stateCityError");
+
+    if (document.forms["signupForm"]["userState"].value == "") {
+        stateCityError.classList.remove("hidden");
+        stateCityError.textContent = "Please enter state.";
+        return false;
+    }
+    else {
+        for (let i = 0; i < statesResult.length; i++) {
+            if (document.forms["signupForm"]["userState"].value == statesResult[i].name) {
+                stateCityError.classList.add("hidden");
+                return true;
+            }
+        }
+        stateCityError.classList.remove("hidden");
+        stateCityError.textContent = "Please select value from the list."
+        return false;
+    }
+}
+
+function cityValidation() {
+    var stateCityError = document.getElementById("stateCityError");
+
+    if (document.forms["signupForm"]["userCity"].value == "") {
+        stateCityError.classList.remove("hidden");
+        stateCityError.textContent = "Please enter city.";
+        return false;
+    }
+    stateCityError.classList.add("hidden");
+    return true;
+}
+
+function ratingValidation() {
+    var englishOutput = document.getElementById("englishOutput");
+    var ratingError = document.getElementById("ratingError");
+
+    if (englishOutput.textContent == "") {
+        ratingError.classList.remove("hidden");
+        ratingError.textContent = "Please rate yourself.";
+        return false;
+    }
+    ratingError.classList.add("hidden");
+    return true;
+}
+
+function urlValidation() {
+    var urlError = document.getElementById("urlError");
+
+    if (document.forms["signupForm"]["userLinkedUrl"].value == "") {
+        urlError.classList.remove("hidden");
+        urlError.textContent = "Please enter linkedin profile URL.";
+        return false;
+    }
+    urlError.classList.add("hidden");
+    return true;
+}
+
+function fileValidation() {
+    var fileError = document.getElementById("fileError");
+    if (document.forms["signupForm"]["userFile"].value == "") {
+        fileError.classList.remove("hidden");
+        fileError.textContent = "Please select the file.";
+        return false;
+    }
+    fileError.classList.add("hidden");
+    return true;
 }
