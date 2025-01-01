@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+}
+
+#mercury{
+    animation: rotate 4s linear infinite;
+    transform-origin: 108px 108px;
+}
+
+#venus{
+    animation: rotate 7s linear infinite;
+    transform-origin: 172px 172px;
+}
+
+#earth{
+    animation: rotate 10s linear infinite;
+    transform-origin: 260px 260px;
+}
+
+#mars{
+    animation: rotate 13s linear infinite;
+    transform-origin: 370px 370px;
+}
+
+#jupiter{
+    animation: rotate 16s linear infinite;
+    transform-origin: 475px 475px;
+}
+
+#saturn{
+    animation: rotate 20s linear infinite;
+    transform-origin: 660px 660px;
+}
+
+#uranus{
+    animation: rotate 24s linear infinite;
+    transform-origin: 780px 780px;
+}
+
+@keyframes rotate {
+
+    0% {
+        transform: rotate(0deg);
+        /* Start at 0 degrees */
+    }
+
+    100% {
+        transform: rotate(360deg);
+        /* Complete one full rotation */
+    }
+
+}
