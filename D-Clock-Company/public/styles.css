@@ -951,12 +951,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.shadow-2xl {
-  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -979,16 +973,8 @@ video {
   --tw-shadow: var(--tw-shadow-colored);
 }
 
-.text-shadow {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 .text-shadow-lg {
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-.text-shadow-xl {
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hover\:bg-red-700:hover {

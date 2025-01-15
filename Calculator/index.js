@@ -7,35 +7,44 @@ btns.forEach(element => {
     element.addEventListener("click", funcBtnOps);
 });
 
-function funcBtnOps(event){
-    if(event.target.value=="AC"){
-        txtInput.value="";
-        txtInput.readOnly=false;
-        txtInput.style.backgroundColor="white";
-        isMinus=false;
-        txtInput.style.color="black";
+function funcBtnOps(event) {
+    if (event.target.value == "AC") {
+        txtInput.value = "";
+        txtInput.readOnly = false;
+        txtInput.style.backgroundColor = "white";
+        isMinus = false;
+        txtInput.style.color = "black";
     }
-    else if(event.target.value=="="){
-        expressionToEvaluate=txtInput.value;
-        txtInput.value+= "="+eval(expressionToEvaluate);
-        txtInput.readOnly=true;
-        txtInput.style.backgroundColor="gray";
-        txtInput.style.color="white";
-    }
-    else if(event.target.value=="+/-"){
-        if(isMinus==false){
-            txtInput.value+="(-";
-            isMinus=true;
+    else if (event.target.value == "=") {
+        evaluate = txtInput.value;
+        expressionToEvaluate = "";
+        for (let i = 0; i < evaluate.length; i++) {
+            if (evaluate[i] == "÷") {
+                expressionToEvaluate += "/"
+            }
+            else {
+                expressionToEvaluate += evaluate[i];
+            }
         }
-        else{
-            txtInput.value+=")";
-            isMinus=false;
+        txtInput.value += "=" + eval(expressionToEvaluate);
+        txtInput.readOnly = true;
+        txtInput.style.backgroundColor = "gray";
+        txtInput.style.color = "white";
+    }
+    else if (event.target.value == "+/-") {
+        if (isMinus == false) {
+            txtInput.value += "(-";
+            isMinus = true;
+        }
+        else {
+            txtInput.value += ")";
+            isMinus = false;
         }
     }
-    else if(event.target.value=="x"){
-        txtInput.value+="*";
+    else if (event.target.value == "x") {
+        txtInput.value += "*";
     }
-    else{
-        txtInput.value+=event.target.value;
+    else {
+        txtInput.value += event.target.value;
     }
 }
