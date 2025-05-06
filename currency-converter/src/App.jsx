@@ -80,7 +80,7 @@ function App() {
 
           {
             loading && (<>
-              <img src={loadingImage} alt="" className='w-18 h-18 mb-4' />
+              <img src={loadingImage} alt="" className='w-14 h-14 mb-4' />
             </>)
           }
 
