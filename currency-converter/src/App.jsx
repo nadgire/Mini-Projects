@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
+import loadingImage from './assets/loading.gif';
 
 function App() {
   const currentYear = new Date().getFullYear();
@@ -76,7 +77,13 @@ function App() {
           <p className="text-lg text-white">Convert currencies easily and quickly!</p>
           <p className="text-lg text-red-600 mb-4">(Conversion rates refreshes once in 24hrs. Live rates may vary.)</p>
           {error && <p className="text-red-500 mb-4">{error}</p>}
-          {loading && <p className="text-white mb-4">Loading...</p>}
+
+          {
+            loading && (<>
+              <img src={loadingImage} alt="" className='w-18 h-18 mb-4' />
+            </>)
+          }
+
           <div className="flex gap-2 items-center">
             <span className="text-white w-10 text-right">From</span>
             <select
@@ -140,6 +147,7 @@ function App() {
             />
           </div>
         </div>
+
         <div className="my-10">
           {conversionData && !loading && (
             <div className="text-white">
