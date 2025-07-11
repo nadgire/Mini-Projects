@@ -7,7 +7,7 @@
 | 03  | [Mobile Sidebar Navigation](https://github.com/nadgire/Mini-Projects/tree/main/MobileSidebarNavigation)                       | [Live Demo](https://nadgire.github.io/Mini-Projects/MobileSidebarNavigation/public) |
 | 04  | [Password Generator](https://github.com/nadgire/Mini-Projects/tree/main/PasswordGenerator)                          | [Live Demo](https://nadgire.github.io/Mini-Projects/PasswordGenerator/public)          |
 | 05  | [Rock Paper Scissors](https://github.com/nadgire/Mini-Projects/tree/main/Rock%20Paper%20Scissors)                               | [Live Demo](https://nadgire.github.io/Mini-Projects/Rock%20Paper%20Scissors)                |
-| 06  | [Tic Tac Toe](https://github.com/nadgire/Mini-Projects/tree/main/Tic%20Tac%20Toe)                           | [Live Demo](https://nadgire.github.io/Mini-Projects/Tic%20Tac%20Toe/public)           |
+| 06  | [Tic Tac Toe](https://github.com/nadgire/Mini-Projects/tree/main/Tic%20Tac%20Toe)                           | [Live Demo](https://nadgire.github.io/Mini-Projects/TicTacToe/public)           |
 | 07  | [Word Scramble Game](https://github.com/nadgire/Mini-Projects/tree/main/Word%20Scramble%20Game)                           | [Live Demo](https://nadgire.github.io/Mini-Projects/WordScrambleGame/scramble.html)           |
 | 08  | [Step Progress Bar](https://github.com/nadgire/Mini-Projects/tree/main/Step%20Progress%20Bar)                           | [Live Demo](https://nadgire.github.io/Mini-Projects/Step%20Progress%20Bar)           |
 | 09  | [Sign Up Form with Validations](https://github.com/nadgire/Mini-Projects/tree/main/SignUpForm)                           | [Live Demo](https://nadgire.github.io/Mini-Projects/SignUpForm)           |
